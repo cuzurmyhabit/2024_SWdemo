@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=no">
+    <title>프로필</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="../scripts.js"></script>  
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <button class="back-btn"><</button>
+            <span>프로필</span>
+            <div class="menu-btn">≡</div>
+        </div>
+
+        <div class="profile-info">
+            <div class="profile-img">
+                <img src="../images/profile.png" alt="Profile">
+            </div>
+            <div class="profile-text">
+                <span class="nickname">똥쟁이 지수민</span><br>
+                <span class="status">집 가고 싶다</span>
+            </div>
+            <div class="settings-icon">
+                <img src="../images/settingIcon.png" alt="Settings">
+            </div>
+        </div>
+
+        <div class="message">
+            <p>똥쟁이 지수민 님!</p>
+            <p>오늘은 무엇이든지 <br>
+            잘 할 수 있는 날이에요!</p>
+            <br>
+            <p>오늘의 공부도 열심히 해보아요!</p>
+        </div>
+
+        <div class="plans-container">
+            <div class="plans-group">
+                <button class="add-btn">계획 1 +</button>
+                <div class="plan">
+                    <input type="checkbox" id="plan1">
+                    <label for="plan1">국어 (지문 읽기)</label>
+                    <button class="correction-btn">···</button>
+                </div>
+                <div class="plan">
+                    <input type="checkbox" id="plan2" checked>
+                    <label for="plan2">영어 (듀오링고 30분)</label>
+                    <button class="correction-btn">···</button>
+                </div>
+            </div>
+        
+            <div class="plans-group">
+                <button class="add-btn">AI 맞춤 계획 +</button>
+                <div class="plan">
+                    <input type="checkbox" id="plan3">
+                    <label for="plan3">수학: 2시간 (응용 문제 풀이)</label>
+                    <button class="correction-btn">···</button>
+                </div>
+                <div class="plan">
+                    <input type="checkbox" id="plan4">
+                    <label for="plan4">전공2: 1시간 (개념 정리 및 문제 풀이)</label>
+                    <button class="correction-btn">···</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="add-plan-container">
+            <button class="add-plan-btn">계획 그룹 추가하기</button>
+        </div>
+
+        <div class="footer">
+            <div class="footer-item">
+                <img src="../images/homeIcon.png" alt="homeIcon">
+                <button class="footer-btn">홈</button>
+            </div>
+            <div class="footer-item">
+                <img src="../images/chatingIcon.png" alt="chatingIcon">
+                <button class="footer-btn">채팅</button>
+            </div>
+            <div class="footer-item">
+                <img src="../images/mypageIcon.png" alt="mypageIcon">
+                <button class="footer-btn active">프로필</button>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
