@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 튜터</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .header {
+            background-color: #FFA500;
+            padding: 40px;
+            /* 상하 패딩 조정 */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            /* 양쪽 정렬 */
+        }
+
+        .header h2 {
+            color: black;
+            /* 글씨 색상을 검정색으로 변경 */
+            margin: 0;
+            /* 여백 제거 */
+            font-size: 16px;
+            /* 폰트 크기 조정 */
+        }
+
+        .header .icon {
+            cursor: pointer;
+            /* 커서 포인터로 변경 */
+            color: black;
+            /* 아이콘 색상을 검정색으로 설정 */
+            font-size: 20px;
+            /* 아이콘 크기 조정 */
+        }
+
+        .messages {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+        }
+
+        .message {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .ai {
+            background-color: #e0e0e0;
+            align-self: flex-start;
+            margin-right: auto;
+            /* 왼쪽으로 붙이기 */
+        }
+
+        .user {
+            background-color: #ffa500;
+            color: white;
+            align-self: flex-end;
+            margin-left: auto;
+            /* 오른쪽으로 붙이기 */
+        }
+
+        .label {
+            font-weight: bold;
+            margin-right: 10px;
+            /* 레이블과 메시지 간의 간격 */
+            color: #333;
+            /* 레이블 색상 */
+        }
+
+        .input-area {
+            display: flex;
+            padding: 10px;
+            background-color: #fff;
+            border-top: 1px solid #ddd;
+        }
+
+        .input-area input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            margin-right: 10px;
+            font-size: 14px;
+            background-color: #f0f0f0;
+            /* 배경색을 회색으로 설정 */
+        }
+
+        .input-area button {
+            background-color: #FFA500;
+            /* 배경색 유지 */
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            color: white;
+            /* 화살표 색상 흰색으로 설정 */
+            border-radius: 20px;
+            /* 테두리를 둥글게 설정 */
+            padding: 10px;
+            /* 패딩 추가 */
+        }
+
+        .input-area button:hover {
+            /* 호버 효과 없음 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <i class="fas fa-arrow-left icon"></i> <!-- 뒤로가기 아이콘 (Font Awesome) -->
+            <h2>맞춤형 학습 AI 튜터</h2>
+            <i class="fas fa-bars icon" style="color: black;"></i> <!-- 줄 세 개 아이콘 -->
+        </div>
+        <div class="messages" id="messages">
+            <div class="message ai">
+                <span class="label">AI:</span>
+                <span>안녕하세요! 어떤 학습 계획을 작성해 드릴까요?</span>
+            </div>
+        </div>
+        <div class="input-area">
+            <input type="text" id="messageInput" placeholder="메시지를 입력하세요..." />
+            <button id="sendButton"><i class="fas fa-arrow-up"></i></button>
+        </div>
+    </div>
+
+    <script>
+        const sendButton = document.getElementById('sendButton');
+        const input = document.getElementById('messageInput');
+        const messagesContainer = document.getElementById('messages');
+
+        function sendMessage() {
+            const message = input.value.trim();
+            if (message) {
+                // 사용자의 메시지 표시
+                const userMessage = document.createElement('div');
+                userMessage.className = 'message user';
+                userMessage.innerHTML = `<span class="label">나:</span> <span>${message}</span>`;
+                messagesContainer.appendChild(userMessage);
+
+                // AI의 응답 처리
+                setTimeout(() => {
+                    const aiMessage = document.createElement('div');
+                    aiMessage.className = 'message ai';
+
+                    if (message.includes("이번 주의 학습 계획을 짜줘")) {
+                        aiMessage.innerHTML = `
+                            <span class="label">AI:</span>
+                            <span>
+                                <strong>월요일</strong><br>
+                                - 국어: 2시간 (문법 복습 및 문장 분석)<br>
+                                - 수학: 2시간 (함수 개념 정리)<br>
+                                <strong>화요일</strong><br>
+                                - 영어: 2시간 (단어 학습 및 문법 정리)<br>
+                                <strong>수요일</strong><br>
+                                - 과학: 2시간 (실험 및 이론 정리)<br>
+                                <strong>목요일</strong><br>
+                                - 체육: 2시간 (체력 훈련 및 실기 연습)<br>
+                                <strong>금요일</strong><br>
+                                - 전공: 2시간 (전공 주제 연구 및 발표 준비)<br>
+                            </span>
+                        `;
+                    } else {
+                        aiMessage.innerHTML = `<span class="label">AI:</span> <span>해당 요청에 대한 응답을 준비 중입니다.</span>`;
+                    }
+
+                    messagesContainer.appendChild(aiMessage);
+                    messagesContainer.scrollTop = messagesContainer.scrollHeight; // 스크롤 바닥으로
+                }, 3000); // 3초 후에 응답
+
+                // 입력 필드 초기화
+                input.value = '';
+            }
+        }
+
+        sendButton.addEventListener('click', sendMessage);
+
+        // 엔터 키로 메시지 전송
+        input.addEventListener('keydown', function (event) {
+            if (event.key === 'Enter') {
+                event.preventDefault(); // 기본 엔터 동작 방지
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+
+</html>
