@@ -35,10 +35,25 @@ body {
     font-family: 'Pretendard-Regular';
     font-weight: bold;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 40px;
-    background-color: #FF9D3D;
+    justify-content: space-between;
+    padding: 30px;
+    margin-bottom: 60px;
+    color: black;
+    font-size: 15px;
+}
+
+.header > .title {
+    color: #FF9D3D;
+    font-size: 24px;
+    width: 60px;
+    /*white-space: nowrap;        span 줄바꿈 현상 해결*/
+    margin-right: 20px;
+}
+
+.menu-btn {
+    display: flex;
+    padding: 10px;
     color: black;
     font-size: 18px;
 }
@@ -52,17 +67,26 @@ body {
     cursor: pointer;
 }
 
+.menu-btn {
+    margin-left: 180px;
+}
+
+.box {
+    padding: 10px 20px;
+    margin-top: -100px;
+}
+
 /* 프로필 정보 */
 .profile-info {
     display: flex;
     align-items: center;
-    padding: 20px;
+    justify-content: center;
     background-color: white;
 }
 
 .profile-img img {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     border-radius: 100%;
 }
 
@@ -74,7 +98,7 @@ body {
 
 .nickname {
     font-family: 'Pretendard-Regular';
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .status {
@@ -83,28 +107,44 @@ body {
     font-size: 10px;
 }
 
-.settings-icon img {
-    width: 20px;
-    height: 20px;
+/* 달력 */
+.calendar-container {
+    margin: 10px;
 }
 
-/* 격려 메시지 */
-.message {
+.calendar {
+    display: flex;
+    text-align: center;
+}
+
+.calendar-header {
+    display: flex;
+}
+
+.calendar-header > p {
     font-family: 'Pretendard-Regular';
-    ;
-    background-color: #FF9D3D   ;
-    border-radius: 22px;
-    padding: 15px;
-    margin: 10px 15px;
-    color: white;
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: 12px;
+}
+
+.calendar-header > img {
+    margin-left: 10px;
+    width: 64px;
+    height: 14px;
+}
+
+.cal-img {
+    margin: auto;
+    margin-top: 30px;
+    width: 273px;
+    height: 223px;
 }
 
 /* 투두 리스트 */
 .plans-container {
     font-family: 'Pretendard-Regular';
-    margin: 15px;
+    margin-top: -50px;
+    padding: 50px;
+    /* margin: 15px; */
 }
 
 .add-btn {
@@ -123,6 +163,10 @@ body {
     padding: 5px;
     margin-bottom: 10px;
     border-bottom: 1px solid hsl(0, 0%, 60%);
+}
+
+.plans-group {
+    margin-top: 20px;
 }
 
 .plan input[type="checkbox"] {
@@ -207,16 +251,20 @@ body {
     cursor: pointer;
 }
 
+.disactive {
+    color: #C0C0C0;
+}
+
 .footer-btn {
     background: none;
     border: none;
     color: #888;
     font-size: 8px;
+    cursor: pointer;
     margin-top: 5px; 
 }
 
 .footer-btn.active {
     color: #FF9D3D;
     font-weight: bold;
-    cursor: pointer;
 }

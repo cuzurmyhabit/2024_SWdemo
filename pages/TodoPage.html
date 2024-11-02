@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=no">
+    <title>투두리스트</title>
+    <link rel="stylesheet" href="todo.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span class="title">똑똑!</span>
+            <div class="menu-btn">≡</div>
+        </div>
+
+        <div class="box">
+            <div class="profile-info">
+                <div class="profile-img">
+                    <img src="../images/profile.png" alt="Profile">
+                </div>
+                <div class="profile-text">
+                    <span class="nickname">똥쟁이 지수민</span><br>
+                    <span class="status">집 가고 싶다</span>
+                </div>
+            </div>
+            
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <p>2024년 10월</p>
+                    <img class="date" src="../images/cal.png" alt="">
+                </div>
+                <div class="calendar">
+                    <img class="cal-img" src="../images/calendar.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="plans-container">
+            <div class="plans-group">
+                <button class="add-btn">계획 1</button>
+                <div class="plan">
+                    <input type="checkbox" id="plan1">
+                    <label for="plan1">국어 (지문 읽기)</label>
+                </div>
+                <div class="plan">
+                    <input type="checkbox" id="plan2" checked>
+                    <label for="plan2">영어 (듀오링고 30분)</label>
+                </div>
+            </div>
+        
+            <div class="plans-group">
+                <button class="add-btn">AI 맞춤 계획</button>
+                <div class="plan">
+                    <input type="checkbox" id="plan3">
+                    <label for="plan3">수학: 2시간 (응용 문제 풀이)</label>
+                </div>
+                <div class="plan">
+                    <input type="checkbox" id="plan4">
+                    <label for="plan4">전공2: 1시간 (개념 정리 및 문제 풀이)</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-item">
+                <img src="../images/selectHome.png" alt="homeIcon">
+                <button class="footer-btn active">홈</button>
+            </div>
+
+            <div class="footer-item">
+                <a href="./knockKnock.html"><img src="../images/chatingIcon.png" alt="chatingIcon"></a>
+                <a href="./knockKnock.html"><button class="footer-btn disactive">채팅</button></a>
+            </div>
+            
+            <div class="footer-item">
+                <a href="./MyPage.html"><img src="../images/mypage.png" alt="mypageIcon"></a>
+                <a href="./MyPage.html"><button class="footer-btn disactive">프로필</button></a>
+            </div>
+        </div>
+    </div>
+    <script src="../Todoscripts.js"></script>
+</body>
+</html>
